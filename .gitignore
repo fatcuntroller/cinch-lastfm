@@ -1,4 +1,7 @@
 pkg/*
+
 *.gem
+
 *.swp
+
 .bundle
