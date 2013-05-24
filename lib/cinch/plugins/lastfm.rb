@@ -10,7 +10,7 @@ module Cinch
 			# Redis backend
 
 			class << self
-				attr_accessor :lfmapi, #:host, :port # Redis backend scrub
+				attr_accessor :lfmapi #:host, :port # Redis backend scrub
 
 				def configure(&block) 
 					yield self
@@ -23,15 +23,16 @@ module Cinch
 				# Will feature a redis backend
 			end
 
-			match %r{np (.+?)}, :method => :now_playing
+			match %r{np ([a-zA-Z]+)}, :method => :now_playing
 
 			# Gets Now Playing for an user
 			def now_playing(m, nick)
-
+				artist, track = get_data(nick)
+				m.reply("#{nick} has recently played: #{artist} - #{track}")
 			end
 
 			def get_data(nick)
-				lfmXML = Nokogiri::XML(open("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=#{nick}&api_key=#{lfmapi}"))
+				lfmXML = Nokogiri::XML(open("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=#{nick}&api_key=#{self.class.lfmapi}"))
 				artist = lfmXML.xpath('//artist').first.content
 				track = lfmXML.xpath('//name').first.content
 				[artist, track]
