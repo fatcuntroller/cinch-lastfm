@@ -23,7 +23,7 @@ module Cinch
 				# Will feature a redis backend
 			end
 
-			match %r{np ([a-zA-Z]+)}, :method => :now_playing
+			match %r{np ([a-zA-Z0-9]+)}, :method => :now_playing
 
 			# Gets Now Playing for an user
 			def now_playing(m, nick)
