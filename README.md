@@ -6,6 +6,9 @@ This is the Cinch Last.fm plugin adding "recently played" functionality.
 
 This section is yet to be done, and will be done as this becomes a gem.
 
+	require 'cinch'
+	require 'cinch/plugins/lastfm'
+
 	Cinch::Plugins::Lastfm.configure do |c|
 		c.lfmapi = "yourlastfmapikey"
 	end
@@ -19,5 +22,12 @@ This section is yet to be done, and will be done as this becomes a gem.
 ## Commands
 
 Reacts to *!np username*
+
+TODO
+-----
+
+* Feature a redis backend
+* Minor improvements
+* Better docs
 
 

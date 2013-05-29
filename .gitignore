@@ -1,7 +1,6 @@
-pkg/*
-
 *.gem
-
 *.swp
-
 .bundle
+spec
+pkg
+rdoc
