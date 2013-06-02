@@ -11,6 +11,8 @@ This section is yet to be done, and will be done as this becomes a gem.
 
 	Cinch::Plugins::Lastfm.configure do |c|
 		c.lfmapi = "yourlastfmapikey"
+		c.host = "redis address, probably localhost"
+		c.port = 6379 #change to suit your needs
 	end
 
 	bot = Cinch::Bot.new do
@@ -21,12 +23,11 @@ This section is yet to be done, and will be done as this becomes a gem.
 
 ## Commands
 
-Reacts to *!np username*
+Reacts to *!np username*, *!link username*, *!np* (as soon as !link is provided with your username though)
 
 TODO
 -----
 
-* Feature a redis backend
 * Minor improvements
 * Better docs
 

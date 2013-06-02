@@ -20,7 +20,7 @@ spec = Gem::Specification.new do |s|
 
   # Change these as appropriate
   s.name              = "cinch-lastfm"
-  s.version           = "0.1.0"
+  s.version           = "0.2.0"
   s.summary           = "Cinch Lastfm plugin"
   s.description       = "This is the Cinch Last.fm plugin adding 'recently played' functionality."
   s.author            = "Anton Sebvie"
@@ -38,8 +38,10 @@ spec = Gem::Specification.new do |s|
   # If you want to depend on other gems, add them here, along with any
   # relevant versions
   # s.add_dependency("some_other_gem", "~> 0.1.0")
-  s.add_dependency("nokogiri")
+  s.add_dependency("nokogiri", "~> 1.5.0")
   s.add_dependency("cinch", ">= 2.0.0")
+  s.add_dependency("redis", "~> 3.0.0")
+  s.add_dependency("redis-namespace", "~> 1.3.0")
   # If your tests use any gems, include them here
   s.add_development_dependency("rspec")
 end
