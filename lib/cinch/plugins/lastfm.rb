@@ -28,7 +28,7 @@ module Cinch
 
 			match %r{np ([a-zA-Z0-9]+)}, :method => :now_playing
 			match %r{link ([a-zA-Z0-9]+)}, :method => :link_account
-			match %r{np}, :method => :now_playing_user
+			match %r{np$}, :method => :now_playing_user
 
 
 			# Gets Now Playing for an user
