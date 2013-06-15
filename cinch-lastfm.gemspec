@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = "cinch-lastfm"
-  s.version = "0.2.1"
+  s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Anton Sebvie"]
-  s.date = "2013-06-11"
+  s.date = "2013-06-15"
   s.description = "This is the Cinch Last.fm plugin adding 'recently played' functionality."
   s.email = "fatkuntroller@gmail.com"
   s.extra_rdoc_files = ["README.md"]

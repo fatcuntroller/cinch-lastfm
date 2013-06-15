@@ -20,7 +20,7 @@ spec = Gem::Specification.new do |s|
 
   # Change these as appropriate
   s.name              = "cinch-lastfm"
-  s.version           = "0.2.1"
+  s.version           = "0.2.2"
   s.summary           = "Cinch Lastfm plugin"
   s.description       = "This is the Cinch Last.fm plugin adding 'recently played' functionality."
   s.author            = "Anton Sebvie"

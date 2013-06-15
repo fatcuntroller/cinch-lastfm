@@ -3,6 +3,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'redis'
 require 'redis-namespace'
+require 'cgi'
 
 module Cinch
 	module Plugins
@@ -26,13 +27,14 @@ module Cinch
 				# Redis backend
 			end
 
-			match %r{np ([a-zA-Z0-9]+)}, :method => :now_playing
-			match %r{link ([a-zA-Z0-9]+)}, :method => :link_account
+			match %r{np (.+)}, :method => :now_playing
+			match %r{link (.+)}, :method => :link_account
 			match %r{np$}, :method => :now_playing_user
 
 
 			# Gets Now Playing for an user
 			def now_playing(m, nick)
+				nick = CGI::escape(nick)
 				artist, track = get_data(nick)
 				m.reply("#{nick} has recently played: #{artist} - #{track}")
 			end
@@ -48,6 +50,7 @@ module Cinch
 
 			# Links a designated Last Fm account
 			def link_account(m, nick)
+				nick = CGI::escape(nick)
 				@backend.set(m.user, nick)
 				m.reply("#{m.user} is now linked with account #{nick}!")
 			end
